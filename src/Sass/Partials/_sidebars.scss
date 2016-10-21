@@ -1,0 +1,15 @@
+.left-sidebar,
+.right-sidebar{
+  background-color: $background-color;
+  color:$text-color;
+}
+
+.right-sidebar{
+  width: $width-right-sidebar;
+  float: right;
+}
+
+.left-sidebar{
+  width: $width-left-sidebar;
+  float: left;
+}

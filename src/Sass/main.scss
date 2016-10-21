@@ -1,0 +1,19 @@
+// Variables
+
+$text-color-dark: #333333;
+$text-color: #FFF;
+$background-color: #212424;
+$background-color-header: #484848;
+$color-accent: #5fbbff;
+
+$tab-item-width: 65px;
+$width-left-sidebar: $tab-item-width*3;
+$width-right-sidebar: $tab-item-width*5;
+
+$icon-padding: 15px 25px;
+
+@import "Partials/normalize";
+@import "Partials/sidebars";
+@import "Partials/tabs";
+@import "Partials/menuElement";
+@import "Partials/canvas";

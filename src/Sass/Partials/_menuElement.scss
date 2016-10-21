@@ -1,0 +1,49 @@
+.new-elements{
+  margin: 0;
+  padding: 0;
+  li{
+    list-style: none;
+  }
+}
+
+.menu-element{
+  list-style: none;
+  width:100%;
+  display: block;
+  margin-bottom: 15px;
+  background-color: $background-color-header;
+  color: $text-color;
+  .menu-element-short{
+    height: 45px;
+    position: relative;
+    i{
+      padding: $icon-padding;
+    }
+  }
+
+  .menu-element-title{
+    h4{
+      display: inline;
+    }
+    display: inline;
+    i{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      padding: 5px 10px;
+    }
+  }
+
+  .menu-element-icon{
+    display: inline;
+  }
+
+  .menu-element-desc{
+    display: block;
+    padding: 5px 10px;
+    background-color: #656565;
+    p{
+      margin:0;
+    }
+  }
+}

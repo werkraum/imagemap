@@ -1,0 +1,27 @@
+.tab-header{
+  display:block;
+  border-bottom: 1px solid $background-color-header;
+  .tab-header-item{
+    display:inline-block;
+    padding: $icon-padding;
+    background-color: $background-color;
+    border-right: 1px solid $background-color-header;
+    width: $tab-item-width;
+    i{
+      color: $text-color;
+    }
+    &.active,
+    &:hover{
+      cursor: pointer;
+      i{
+        color: $color-accent;
+      }
+      border-bottom: 3px solid $color-accent;
+    }
+  }
+}
+
+.tab-container{
+  padding: 15px;
+  clear: both;
+}
