@@ -10,7 +10,7 @@ In our example integration for TYPO3 CMS this app allows editors to enhance any 
 
 ## Installation
 
-Clone the repo, run 'npm install' and 'danach npm run build'.
+Clone the repo, run 'npm install' and 'npm run build'.
 
 While you are developing we provide a task 'npm run watch' which adds local sass, jsx and browsify support.
 
