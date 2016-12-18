@@ -1,9 +1,19 @@
 import React from "react";
 import ReactKonva from "react-konva";
 
-export default class Factory extends React.Component{
-    createKonvaShape = ({element, key}) => {
-        let shape = null;
+class Factory {
+    static createKonvaShape( { element , key } ){
+        let shape = (
+            <ReactKonva.Layer key={key}>
+                <ReactKonva.Circle
+                    x={50} y={50} radius={10}
+                    fill="#FFFFFF"
+                    stroke="#000000"
+                    strokeWidth={2}
+                    draggable="true"
+                />
+            </ReactKonva.Layer>
+        );
         switch(element.type) {
             case 'circle':
                 shape = (
@@ -30,18 +40,10 @@ export default class Factory extends React.Component{
                 );
                 break;
             default:
-                shape = (
-                    <ReactKonva.Layer key={key}>
-                        <ReactKonva.Circle
-                            x={50} y={50} radius={10}
-                            fill="#FFFFFF"
-                            stroke="#000000"
-                            strokeWidth={2}
-                            draggable="true"
-                        />
-                    </ReactKonva.Layer>
-                );
         }
+        console.log(shape);
         return shape;
     }
 }
+
+export default Factory

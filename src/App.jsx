@@ -1,49 +1,36 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import $ from "jquery";
+import { Provider } from "mobx-react";
 
 import ShapesSidebar from './components/ShapesSidebar.jsx';
 import ConfigSidebar from './components/ConfigSidebar.jsx';
 import Canvas from './components/Canvas/Canvas.jsx';
 
+import ShapeStore from "./components/Canvas/ShapeStore.jsx";
+
 class App extends React.Component{
 
     constructor(){
         super();
-        this.state = {elements : {}, currentElement: 0};
     }
-
-    handleElementChange(e) {
-        this.setState({currentElement:1});
-    }
-
-    componentDidMount() {
-        this.serverRequest = $.getJSON(this.props.source, function (result) {
-            console.log(result);
-            this.setState({
-                elements: result
-            });
-        }.bind(this));
-    }
-
-    componentWillUnmount() {
-        this.serverRequest.abort();
-    }
-
     render() {
         return (
             <div>
-                <ShapesSidebar elements={this.state.elements} onChangeHandler={this.handleElementChange.bind(this)}/>
-                <Canvas elements={this.state.elements}/>
-                <ConfigSidebar elements={this.state.elements}/>
+                <ShapesSidebar />
+
+                <Canvas store={ShapeStore} source={this.props.source}/>
+
+                <ConfigSidebar />
             </div>
         )
     }
 }
 
 require('./Sass/main.scss');
-
+const stores = { ShapeStore };
 ReactDOM.render(
-    <App source="http://imagemap.werkraum.lan/"/>,
+    <Provider {...stores}>
+        <App source="http://imagemap.werkraum.lan/"/>
+    </Provider>,
     document.getElementById('app')
 );

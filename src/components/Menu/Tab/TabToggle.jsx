@@ -2,10 +2,6 @@ import React from "react";
 import TabHeaderItem from './TabHeaderItem.jsx';
 
 export default class TabToggle extends React.Component{
-    propTypes = {
-        direction: React.PropTypes.string.isRequired,
-        handleClick: React.PropTypes.func.isRequired
-    };
     constructor(){
         super();
         this.state ={active: false};
@@ -23,3 +19,7 @@ export default class TabToggle extends React.Component{
         )
     }
 }
+TabToggle.propTypes = {
+    direction: React.PropTypes.string.isRequired,
+    handleClick: React.PropTypes.func.isRequired
+};
