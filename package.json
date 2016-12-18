@@ -4,7 +4,8 @@
   "description": "Create and edit html image maps with a standalone React App connectable to any backend that provides image data.",
   "main": "webpack.config.js",
   "scripts": {
-    "start": "webpack-dev-server --content-base src --inline --hot"
+    "start": "webpack-dev-server --content-base src --inline --hot",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",

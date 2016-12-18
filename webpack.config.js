@@ -2,7 +2,7 @@ const debug = process.env.NODE_ENV !== "production";
 const webpack = require('webpack');
 const path = require('path');
 const autoprefixer = require('autoprefixer');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     context: path.join(__dirname, "src"),

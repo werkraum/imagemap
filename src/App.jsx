@@ -1,14 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import $ from "jquery";
-require('./Sass/main.scss');
+
 import ShapesSidebar from './components/ShapesSidebar.jsx';
 import ConfigSidebar from './components/ConfigSidebar.jsx';
-import Canvas from './components/Canvas.jsx';
+import Canvas from './components/Canvas/Canvas.jsx';
 
 class App extends React.Component{
 
-    constructor(props){
+    constructor(){
         super();
         this.state = {elements : {}, currentElement: 0};
     }
@@ -40,6 +40,8 @@ class App extends React.Component{
         )
     }
 }
+
+require('./Sass/main.scss');
 
 ReactDOM.render(
     <App source="http://imagemap.werkraum.lan/"/>,
