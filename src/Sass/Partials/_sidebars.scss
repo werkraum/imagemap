@@ -5,11 +5,17 @@
 }
 
 .right-sidebar{
-  width: $width-right-sidebar;
+  max-width: $width-right-sidebar;
   float: right;
 }
 
 .left-sidebar{
-  width: $width-left-sidebar;
+  max-width: $width-left-sidebar;
   float: left;
+}
+
+.input-group{
+  .form-control{
+    text-align: right;
+  }
 }

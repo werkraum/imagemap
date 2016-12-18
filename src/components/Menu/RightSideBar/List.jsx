@@ -1,8 +1,8 @@
-var List = React.createClass({
-    render: function () {
+import React from "react";
+export default class List extends React.Component{
+    render() {
         return (
             <p>List</p>
         )
     }
-});
-module.exports = List;
+}

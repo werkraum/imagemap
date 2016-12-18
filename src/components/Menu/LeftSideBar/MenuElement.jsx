@@ -1,19 +1,23 @@
+import React from "react";
 import Icon from '../Icon.jsx'
-var MenuElement = React.createClass({
-    propTypes: {
+export default class MenuElement extends React.Component{
+    propTypes = {
         title: React.PropTypes.string.isRequired,
         description: React.PropTypes.string,
         iconClass: React.PropTypes.string,
         link: React.PropTypes.string
-    },
-    getInitialState: function(){
-      return {isOpen: false}
-    },
-    toggle: function(){
+    };
+    constructor(){
+        super();
+        this.state = {isOpen: false};
+
+        this.toggle = this.toggle.bind(this);
+    }
+    toggle(){
         this.setState({isOpen: !this.state.isOpen});
-    },
-    render: function () {
-        var toggleArea = '';
+    }
+    render() {
+        let toggleArea = '';
         if(this.state.isOpen){
             toggleArea = <div className="menu-element-desc"><p>{this.props.description}</p></div>;
         }
@@ -33,5 +37,4 @@ var MenuElement = React.createClass({
             </div>
         )
     }
-});
-module.exports = MenuElement;
+}

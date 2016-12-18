@@ -1,8 +1,8 @@
-var CurrentElements = React.createClass({
-    render: function () {
+import React from "react";
+export default class CurrentElements extends React.Component{
+    render() {
         return (
             <p>CurrentElements</p>
         )
     }
-});
-module.exports = CurrentElements;
+}

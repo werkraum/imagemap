@@ -1,11 +1,13 @@
-div.canvas-wrapper {
-  position: relative;
-  display: inline-block;
-}
+.canvas{
+  display:inline-block;
+  margin: $canvas-margin;
+  padding: $canvas-padding;
+  color: $text-color;
 
-img.canvas-image {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  z-index: -1;
+  .drawing-area{
+    background-color: #656565;
+    width: 100%;
+    min-width: 800px;
+    min-height: 500px;
+  }
 }

@@ -1,3 +1,4 @@
+import React from "react";
 var Icon = React.createClass({
     propTypes: {
         iconClass: React.PropTypes.string.isRequired,

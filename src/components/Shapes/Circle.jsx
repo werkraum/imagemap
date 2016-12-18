@@ -1,3 +1,4 @@
+import React from "react";
 var Circle = React.createClass({
     render: function () {
         return (

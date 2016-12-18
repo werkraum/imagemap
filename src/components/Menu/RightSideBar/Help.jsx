@@ -1,8 +1,8 @@
-var Help = React.createClass({
-    render: function () {
+import React from "react";
+export default class Help extends React.Component{
+    render() {
         return (
             <p>Help</p>
         )
     }
-});
-module.exports = Help;
+}

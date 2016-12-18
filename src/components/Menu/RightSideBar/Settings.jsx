@@ -1,8 +1,8 @@
-var Settings = React.createClass({
-    render: function () {
+import React from "react";
+export default class Settings extends React.Component{
+    render() {
         return (
             <p>Settings</p>
         )
     }
-});
-module.exports = Settings;
+}

@@ -1,5 +1,8 @@
-var createKonvaShape = function(element, key) {
-    var shape;
+import React from "react";
+import ReactKonva from "react-konva";
+
+const createKonvaShape = ({element, key}) => {
+    let shape = null;
     switch(element.type) {
         case 'circle':
             shape = (
@@ -41,27 +44,25 @@ var createKonvaShape = function(element, key) {
     return shape;
 };
 
-var Canvas = React.createClass({
-    render: function () {
-        var image = new Image();
-        image.src = "API_SRC/react.png";
-        var shapes = this.props.elements.shapes;
+export default class Canvas extends React.Component{
+    render() {
+        let image = new Image();
+        image.src = "http://imagemap.werkraum.lan/react.png";
+        let shapes = this.props.elements.shapes;
         if(shapes != undefined) {
-            var shapes = shapes.map(function(element, key) {
-                return createKonvaShape(element, key);
+            shapes = shapes.map((element, key) => {
+                return createKonvaShape({element: element, key: key});
             });
         }
         return (
-            <div className="canvas-wrapper">
+            <div className="canvas">
                 <ReactKonva.Stage width={600} height={300}>
                     <ReactKonva.Layer>
                         <ReactKonva.Image x={0} y={0} width={600} height={300} image={image} />
                     </ReactKonva.Layer>
-                    {(shapes != undefined) ? shapes : <ReactKonva.Layer></ReactKonva.Layer>}
+                    {(shapes != undefined) ? shapes : <ReactKonva.Layer/>}
                 </ReactKonva.Stage>
             </div>
         )
     }
-});
-
-module.exports = Canvas;
+}

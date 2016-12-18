@@ -1,3 +1,5 @@
+$icon-padding: 10px 15px;
+
 .new-elements{
   margin: 0;
   padding: 0;
@@ -13,8 +15,9 @@
   margin-bottom: 15px;
   background-color: $background-color-header;
   color: $text-color;
+  cursor: pointer;
   .menu-element-short{
-    height: 45px;
+    height: 35px;
     position: relative;
     i{
       padding: $icon-padding;

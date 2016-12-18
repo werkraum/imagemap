@@ -1,6 +1,7 @@
+import React from "react";
 import MenuElement from './MenuElement.jsx';
 import MenuElementList from './MenuElementList.jsx';
-var shapes = [
+const shapes = [
     {title:'Rect', description:'null', iconClass:'square', short:''},
     {title:'Circle', description:'null', iconClass:'circle-o', short:''},
     {title:'Ellipse', description:'null', iconClass:'circle-o', short:''},
@@ -20,8 +21,8 @@ var shapes = [
     {title:'Shape', description:'null', iconClass:'', short:''},
 ];
 
-var NewElements = React.createClass({
-    render: function () {
+export default class NewElements extends React.Component{
+    render() {
         return (
             <MenuElementList className="new-elements">
                 {shapes.map(function (item, i) {
@@ -34,5 +35,4 @@ var NewElements = React.createClass({
             </MenuElementList>
         )
     }
-});
-module.exports = NewElements;
+}

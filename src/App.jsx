@@ -1,36 +1,47 @@
+import React from "react";
+import ReactDOM from "react-dom";
+import $ from "jquery";
+require('./Sass/main.scss');
 import ShapesSidebar from './components/ShapesSidebar.jsx';
 import ConfigSidebar from './components/ConfigSidebar.jsx';
 import Canvas from './components/Canvas.jsx';
 
-var App = React.createClass({
-    getInitialState: function() {
-        return {
-            elements: {}
-        };
-    },
-    componentDidMount: function() {
+class App extends React.Component{
+
+    constructor(props){
+        super();
+        this.state = {elements : {}, currentElement: 0};
+    }
+
+    handleElementChange(e) {
+        this.setState({currentElement:1});
+    }
+
+    componentDidMount() {
         this.serverRequest = $.getJSON(this.props.source, function (result) {
             console.log(result);
             this.setState({
                 elements: result
             });
         }.bind(this));
-    },
-    componentWillUnmount: function() {
+    }
+
+    componentWillUnmount() {
         this.serverRequest.abort();
-    },
-    render: function() {
+    }
+
+    render() {
         return (
             <div>
-                <ShapesSidebar elements={this.state.elements}></ShapesSidebar>
-                <Canvas elements={this.state.elements}></Canvas>
-                <ConfigSidebar elements={this.state.elements}></ConfigSidebar>
+                <ShapesSidebar elements={this.state.elements} onChangeHandler={this.handleElementChange.bind(this)}/>
+                <Canvas elements={this.state.elements}/>
+                <ConfigSidebar elements={this.state.elements}/>
             </div>
         )
     }
-});
+}
 
 ReactDOM.render(
-    <App source="API_SRC" />,
+    <App source="http://imagemap.werkraum.lan/"/>,
     document.getElementById('app')
 );

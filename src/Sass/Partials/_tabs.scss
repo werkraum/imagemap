@@ -7,6 +7,7 @@
     background-color: $background-color;
     border-right: 1px solid $background-color-header;
     width: $tab-item-width;
+    height: $tab-item-height;
     i{
       color: $text-color;
     }
@@ -24,4 +25,7 @@
 .tab-container{
   padding: 15px;
   clear: both;
+  max-height:$max-height - $tab-item-height -1px;
+  overflow: hidden;
+  overflow-y: auto;
 }
