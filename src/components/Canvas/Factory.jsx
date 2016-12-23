@@ -41,7 +41,6 @@ class Factory {
                 break;
             default:
         }
-        console.log(shape);
         return shape;
     }
 }

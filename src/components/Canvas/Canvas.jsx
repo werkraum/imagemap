@@ -5,9 +5,7 @@ import {observer, inject} from "mobx-react";
 
 @inject('ShapeStore')@observer
 export default class Canvas extends React.Component {
-    constructor(props) {
-        super();
-    }
+
     componentDidMount() {
         if(this.props.store.isLoading)
             this.props.store.loadShapes(this.props.source);
