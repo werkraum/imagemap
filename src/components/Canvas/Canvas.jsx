@@ -7,15 +7,15 @@ import {observer, inject} from "mobx-react";
 export default class Canvas extends React.Component {
 
     componentDidMount() {
-        if(this.props.store.isLoading)
-            this.props.store.loadShapes(this.props.source);
+        if(this.props.ShapeStore.isLoading)
+            this.props.ShapeStore.loadShapes(this.props.source);
     }
     render() {
         let image = new Image();
         image.src = "http://imagemap.werkraum.lan/react.png";
-        let elements = this.props.store.shapes;
+        let elements = this.props.ShapeStore.shapes;
 
-        let shapes = this.props.store.isLoading === true
+        let shapes = this.props.ShapeStore.isLoading === true
                             ? <ReactKonva.Layer/>
                             : elements.map(function (element, key){return Factory.createKonvaShape({element: element, key: key})} );
         return (
@@ -26,8 +26,8 @@ export default class Canvas extends React.Component {
                     </ReactKonva.Layer>
                     { shapes }
                 </ReactKonva.Stage>
-                {this.props.store.isLoading ? <div>... loading Shapes</div> : ''}
-                <div>Anzahl Shapes: {this.props.store.counter} </div>
+                {this.props.ShapeStore.isLoading ? <div>... loading Shapes</div> : ''}
+                <div>Anzahl Shapes: {this.props.ShapeStore.counter} </div>
             </div>
         )
     }

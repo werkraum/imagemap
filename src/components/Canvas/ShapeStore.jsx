@@ -4,7 +4,7 @@ import $ from "jquery";
 export class ShapeStore {
     request = null;
 
-    @observable shapes_init = asFlat([]);
+    @observable shapes_init = [];
     @observable isLoading = true;
 
     loadShapes(url) {

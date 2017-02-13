@@ -19,8 +19,9 @@ class App extends React.Component{
         return (
             <div>
                 <ShapesSidebar />
-                <Canvas store={ShapeStore} source={this.props.source}/>
+                <Canvas source={this.props.source}/>
                 <ConfigSidebar />
+
                 <DevTools position={{right: 285, top: 0}}/>
             </div>
         )
